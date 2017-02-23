@@ -1,19 +1,23 @@
-<%# navigation styled for Bootstrap 4.0 %>
-<div class="container">
-  <nav class="navbar navbar-dark bg-inverse">
-    <ul class="nav navbar-nav clearfix">
+<nav class="navbar navbar-toggleable-md navbar-light bg-faded">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
+    <%= link_to "Home", root_path, class: 'navbar-brand' %>
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+      <li class="nav-item active">
+        <%= link_to "Athletes Den", root_path, class: 'nav-link' %>
+      </li>
       <li class="nav-item">
-        <button class="navbar-toggler hidden-sm-up nav-link" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2" aria-controls="exCollapsingNavbar2" aria-expanded="false" aria-label="Toggle navigation">
-          &#9776;
-        </button>
+        <%= render 'layouts/navigation_links', class: "nav-link" %>
+      </li>
+      <li class="nav-item">
+        <%= render 'layouts/nav_links_for_auth', class: "nav-link" %>
       </li>
     </ul>
-    <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
-      <%= link_to "Rails bootstrap", root_path, class: 'navbar-brand' %>
-      <ul class="nav navbar-nav">
-        <%= render 'layouts/navigation_links' %>
-        <%= render 'layouts/nav_links_for_auth' %>
-      </ul>
-    </div>
-  </nav>
-</div>
+    <form class="form-inline my-2 my-lg-0">
+      <input class="form-control mr-sm-2" type="text" placeholder="Search">
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+  </div>
+</nav>
